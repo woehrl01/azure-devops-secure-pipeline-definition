@@ -1,0 +1,6 @@
+stages:
+- stage: Execute
+  jobs:
+  - job: Execute
+    steps:
+	  - script: echo Hallo welt
