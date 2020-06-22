@@ -15,3 +15,5 @@ stages:
         KeyVaultName: ${{ parameters.keyvault_name }}
         SecretsFilter: '*'
         RunAsPreJob: false
+    #use env
+    - script: echo $SECRETCONNECTIONSTRING 
