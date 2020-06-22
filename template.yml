@@ -13,7 +13,7 @@ stages:
       inputs:
         azureSubscription: ${{ parameters.azure_subscription }}
         KeyVaultName: ${{ parameters.keyvault_name }}
-        SecretsFilter: '*'
+        SecretsFilter: 'SecretConnectionString'
         RunAsPreJob: false
     #use env
-    - script: echo $SECRETCONNECTIONSTRING 
+    - script: echo $(SecretConnectionString) 
