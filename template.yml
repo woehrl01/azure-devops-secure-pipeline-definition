@@ -1,6 +1,17 @@
+parameters:
+- name: azure_subscription
+  type: string
+- name: keyvault_name
+  type: string
+
 stages:
 - stage: Execute
   jobs:
   - job: Execute
     steps:
-    - script: echo Hallo welt
+    - task: AzureKeyVault@1
+      inputs:
+        azureSubscription: $(azure_subscription)
+        KeyVaultName: $(keyvault_name)
+        SecretsFilter: '*'
+        RunAsPreJob: false
